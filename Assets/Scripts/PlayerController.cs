@@ -14,14 +14,15 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-#if (InputGetKey(Keycode.A) && transform.position.x > maxLeft;
-    transform.Translate(Vector2.left * Time.deltaTime * speed);
+#if UNITY_EDITOR
+        if (Input.GetKey(KeyCode.A) && transform.position.x > maxLeft)
+        transform.Translate(Vector2.left * Time.deltaTime * speed);
 
-    if(Input.GetKey(Keycode.D) && transform.position.x < maxRight;
-    transform.Translate(Vector2.right * Time.deltaTime * speed);
+        if(Input.GetKey(KeyCode.D) && transform.position.x < maxRight)
+        transform.Translate(Vector2.right * Time.deltaTime * speed);
 
-    if(Input.(Keycode.Space) && !isShooting
-        StartCoRoutine(shoot);
+        if (Input.(KeyCode.Space) && !isShooting)
+            StartCoroutine(Shoot);
 #endif
     }
 
@@ -30,6 +31,6 @@ public class PlayerController : MonoBehaviour
         isShooting = true;
         Instantiate(bulletPrefab, transform.position, Quaternion.identity);
         yield return null;
-        isShooting=false;
+        isShooting = false;
     }
 }
