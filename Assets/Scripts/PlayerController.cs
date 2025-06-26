@@ -10,7 +10,9 @@ public class PlayerController : MonoBehaviour
     private const float maxRight = 8.12f;
 
     private float speed = 3;
-    private bool isShooting = false;
+    private float cooldown = 5;
+
+    private bool isShooting;
 
     void Update()
     {
@@ -22,7 +24,7 @@ public class PlayerController : MonoBehaviour
         transform.Translate(Vector2.right * Time.deltaTime * speed);
 
         if (Input.(KeyCode.Space) && !isShooting)
-            StartCoroutine(Shoot);
+        StartCoroutine(Shoot());
 #endif
     }
 
@@ -30,7 +32,7 @@ public class PlayerController : MonoBehaviour
     {
         isShooting = true;
         Instantiate(bulletPrefab, transform.position, Quaternion.identity);
-        yield return null;
+        yield return new WaitForSeconds(cooldown);
         isShooting = false;
     }
 }
