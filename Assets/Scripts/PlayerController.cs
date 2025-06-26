@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
         if(Input.GetKey(KeyCode.D) && transform.position.x < maxRight)
         transform.Translate(Vector2.right * Time.deltaTime * speed);
 
-        if (Input.(KeyCode.Space) && !isShooting)
+        if (Input.GetKey(KeyCode.Space) && !isShooting)
         StartCoroutine(Shoot());
 #endif
     }
