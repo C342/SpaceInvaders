@@ -13,6 +13,7 @@ public class EnemyController : MonoBehaviour
 
     private const float maxLeft = -8.12f;
     private const float maxRight = 8.12f;
+    private const float maxMoveSpeed = 0.02f;
 
     private float moveTimer = 0.01f;
     private const float moveTime = 0.005f;
@@ -30,13 +31,20 @@ public class EnemyController : MonoBehaviour
 
     void Update()
     {
+        if (moveTimer <= 0)
+        {
+            MoveEnemies();
 
+            moveTimer -= Time.deltaTime;
+        }
     }
 
     private void MoveEnemies()
     {
         if (allAliens.Count > 0)
         {
+            int hitMax = 0;
+
             for (int i = 0; i < allAliens.Count; i++)
             {
                 if (movingRight)
@@ -46,8 +54,37 @@ public class EnemyController : MonoBehaviour
                 else
                 {
                     allAliens[i].transform.position += vMoveDistance;
+
+                    if (allAliens[i].transform.position.x > maxRight || allAliens[i].transform.position.x < maxLeft)
+                    {
+                        hitMax++;
+                    }
+                }
+
+                if (hitMax > 0)
+                {
+                    for (int i = 0; i < allAliens.Count; i++)
+                    {
+                        allAliens[i].transform.position -= vMoveDistance;
+
+                        movingRight = !movingRight;
+                    }
                 }
             }
+        }
+    }
+
+    private float GetMoveSpeed()
+    {
+        float f = allAliens.Count * moveTime;
+
+        if (f < maxMoveSpeed)
+        {
+            return maxMoveSpeed;
+        }
+        else
+        {
+            return f;
         }
     }
 }
