@@ -226,10 +226,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 2433392267286338049, guid: 9b2958761d502af48ac7e0051155428f, type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
     - target: {fileID: 7243872794186301307, guid: 9b2958761d502af48ac7e0051155428f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8.12
@@ -325,7 +321,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5577150354453573342, guid: 46e6156034082e14bb0550f0b15f5762, type: 3}
       propertyPath: m_Name
-      value: Crab
+      value: BasicEnemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

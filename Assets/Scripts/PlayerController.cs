@@ -9,8 +9,8 @@ public class PlayerController : MonoBehaviour
     private const float maxLeft = -8.12f;
     private const float maxRight = 8.12f;
 
-    private float speed = 3;
-    private float cooldown = 5;
+    public float speed = 3;
+    public float cooldown = 0.25f;
 
     private bool isShooting;
 
