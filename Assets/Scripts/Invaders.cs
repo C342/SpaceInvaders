@@ -13,7 +13,7 @@ public class Invaders : MonoBehaviour
     public int columns = 11;
 
     [Header("Missiles")]
-    //public Projectile missilePrefab;
+    public Projectile missilePrefab;
     public float missileSpawnRate = 1f;
 
     private void Awake()
@@ -67,7 +67,7 @@ public class Invaders : MonoBehaviour
 
             if (Random.value < (1f / amountAlive))
             {
-                //Instantiate(missilePrefab, invader.position, Quaternion.identity);
+                Instantiate(missilePrefab, invader.position, Quaternion.identity);
                 break;
             }
         }
