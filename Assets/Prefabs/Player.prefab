@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5096774039469062694}
   - component: {fileID: 8839759817900118377}
   - component: {fileID: 6848997645707709475}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -144,8 +144,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3c3af30980fd5f44b3b1d697abba403, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  laserPrefab: {fileID: 0}
+  speed: 7.5
+  laserPrefab: {fileID: 6845820886829962474, guid: a8fc1107f8e33564c806a19d2974f93b, type: 3}
 --- !u!50 &6848997645707709475
 Rigidbody2D:
   serializedVersion: 4
@@ -154,7 +154,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2433392267286338049}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0

@@ -7,17 +7,18 @@ TagManager:
   - BasicEnemy
   - Invader
   - Missile
+  - Laser
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - Missile
+  - Invader
+  - Bunker
+  - Laser
   - 
   - 
   - 
