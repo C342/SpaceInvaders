@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - BasicEnemy
+  - Invader
+  - Missile
   layers:
   - Default
   - TransparentFX
