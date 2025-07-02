@@ -417,9 +417,6 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3731759428238423742, guid: 8192ee46d4485534b88926f8650ed8c9, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 887013375}
-    - targetCorrespondingSourceObject: {fileID: 3731759428238423742, guid: 8192ee46d4485534b88926f8650ed8c9, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 887013380}
   m_SourcePrefab: {fileID: 100100000, guid: 8192ee46d4485534b88926f8650ed8c9, type: 3}
 --- !u!1001 &736376347
@@ -491,19 +488,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3731759428238423742, guid: 8192ee46d4485534b88926f8650ed8c9, type: 3}
   m_PrefabInstance: {fileID: 549737452}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &887013375
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 887013371}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da6c17dd2e4eee44092c66b2d5bd0e3f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  splat: {fileID: 2800000, guid: 936a0fab44e30ee41a85e897743c1e72, type: 3}
 --- !u!50 &887013380
 Rigidbody2D:
   serializedVersion: 4
@@ -819,19 +803,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3731759428238423742, guid: 8192ee46d4485534b88926f8650ed8c9, type: 3}
   m_PrefabInstance: {fileID: 1973906073}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1837828892
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1837828888}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da6c17dd2e4eee44092c66b2d5bd0e3f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  splat: {fileID: 2800000, guid: 936a0fab44e30ee41a85e897743c1e72, type: 3}
 --- !u!50 &1837828898
 Rigidbody2D:
   serializedVersion: 4
@@ -859,6 +830,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1837828899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1837828888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da6c17dd2e4eee44092c66b2d5bd0e3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  splat: {fileID: 2800000, guid: 936a0fab44e30ee41a85e897743c1e72, type: 3}
 --- !u!1 &1874755196 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3731759428238423742, guid: 8192ee46d4485534b88926f8650ed8c9, type: 3}
@@ -1059,16 +1043,17 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2779661226968951386, guid: 8192ee46d4485534b88926f8650ed8c9, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3731759428238423742, guid: 8192ee46d4485534b88926f8650ed8c9, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1837828892}
+      addedObject: {fileID: 1837828898}
     - targetCorrespondingSourceObject: {fileID: 3731759428238423742, guid: 8192ee46d4485534b88926f8650ed8c9, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1837828898}
+      addedObject: {fileID: 1837828899}
   m_SourcePrefab: {fileID: 100100000, guid: 8192ee46d4485534b88926f8650ed8c9, type: 3}
 --- !u!1001 &2042847008
 PrefabInstance:
@@ -1080,7 +1065,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2091840683338908055, guid: 46e6156034082e14bb0550f0b15f5762, type: 3}
       propertyPath: cycleTime
-      value: 25
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 3422520510267655247, guid: 46e6156034082e14bb0550f0b15f5762, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1170,22 +1155,22 @@ MonoBehaviour:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: -0.0010963529
-      value: 0.85025126
-      inSlope: 0.14854532
-      outSlope: 0.14854532
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
       tangentMode: 34
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.33333334
+      outWeight: 0
     - serializedVersion: 3
-      time: 1.006119
-      value: 0.9998684
-      inSlope: 0.14854532
-      outSlope: 0.14854532
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
       tangentMode: 34
       weightedMode: 0
-      inWeight: 0.33333334
+      inWeight: 0
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2

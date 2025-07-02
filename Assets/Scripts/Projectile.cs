@@ -20,12 +20,11 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        CheckCollision(other);
-    }
-
-    private void OnTriggerStay2D(Collider2D other)
-    {
-        CheckCollision(other);
+        if (other.CompareTag("Invader"))
+        {
+            Destroy(other.gameObject);
+            Destroy(gameObject);
+        }
     }
 
     private void CheckCollision(Collider2D other)
