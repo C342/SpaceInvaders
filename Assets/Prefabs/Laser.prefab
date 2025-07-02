@@ -171,5 +171,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab9285f15c391144e8a6e2bf24ac11f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: {x: 0, y: 1, z: 0}
-  speed: 15
+  bulletPrefab: {fileID: 1631480719777595613}
+  firePoint: {fileID: 7243872794186301307, guid: 9b2958761d502af48ac7e0051155428f, type: 3}
+  fireRate: 0.1
+  numberOfShots: 3
+  spreadAngle: 30
