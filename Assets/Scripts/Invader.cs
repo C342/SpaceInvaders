@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 [RequireComponent(typeof(SpriteRenderer))]
@@ -39,12 +40,15 @@ public class Invader : MonoBehaviour
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Laser"))
         {
-            GameManager.Instance.OnInvaderKilled(this);
-        }
-        else if (other.gameObject.layer == LayerMask.NameToLayer("Boundary"))
-        {
-            GameManager.Instance.OnBoundaryReached();
+            this.gameObject.SetActive(false);
         }
     }
 
+    private void Update()
+    {
+        if (hit.collider.compareTag("Invader"))
+        {
+
+        }
+    }
 }

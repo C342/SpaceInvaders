@@ -7,6 +7,7 @@ public class Invaders : MonoBehaviour
     public AnimationCurve speed = new AnimationCurve();
     private Vector3 direction = Vector3.right;
     private Vector3 initialPosition;
+    public static System.Action killed;
 
     [Header("Grid")]
     public int rows = 1;
@@ -42,6 +43,11 @@ public class Invaders : MonoBehaviour
                 invader.transform.localPosition = position;
             }
         }
+    }
+
+    private void InvaderKilled()
+    {
+
     }
 
     private void Start()
