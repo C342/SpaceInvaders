@@ -6,6 +6,7 @@ public class Projectile : MonoBehaviour
 {
     public Vector3 direction = Vector3.up;
     public float speed = 20f;
+    public float maxDistancePerFrame = 1f;
     public PlayerShooting shooter;
 
     void Update()

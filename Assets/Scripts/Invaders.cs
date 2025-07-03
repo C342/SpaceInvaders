@@ -93,12 +93,12 @@ public class Invaders : MonoBehaviour
                 continue;
             }
 
-            if (direction == Vector3.right && invader.position.x >= (rightEdge.x - 1f))
+            if (direction == Vector3.right && invader.position.x >= (rightEdge.x - 0.5f))
             {
                 AdvanceRow();
                 break;
             }
-            else if (direction == Vector3.left && invader.position.x <= (leftEdge.x + 1f))
+            else if (direction == Vector3.left && invader.position.x <= (leftEdge.x + 0.5f))
             {
                 AdvanceRow();
                 break;

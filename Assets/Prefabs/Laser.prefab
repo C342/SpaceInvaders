@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6845820886829962474}
   m_Layer: 9
   m_Name: Laser
-  m_TagString: Laser
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -171,8 +171,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab9285f15c391144e8a6e2bf24ac11f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 1631480719777595613}
-  firePoint: {fileID: 7243872794186301307, guid: 9b2958761d502af48ac7e0051155428f, type: 3}
-  fireRate: 0.1
-  spreadAngle: 30
   direction: {x: 0, y: 1, z: 0}
+  speed: 20
+  shooter: {fileID: 0}
