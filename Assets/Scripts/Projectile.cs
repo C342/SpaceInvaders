@@ -45,7 +45,6 @@ public class Projectile : MonoBehaviour
         }
         else
         {
-            // Optionally handle other collisions like Bunker here
             Bunker bunker = collision.collider.GetComponent<Bunker>();
             if (bunker == null || bunker.CheckCollision(GetComponent<BoxCollider2D>(), transform.position))
             {

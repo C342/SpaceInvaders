@@ -12,10 +12,11 @@ GameObject:
   - component: {fileID: 4607194561267422758}
   - component: {fileID: 5096774039469062694}
   - component: {fileID: 8839759817900118377}
+  - component: {fileID: 4968933062552414975}
   - component: {fileID: 6848997645707709475}
   m_Layer: 3
   m_Name: Player
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -144,8 +145,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3c3af30980fd5f44b3b1d697abba403, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 7.5
+  speed: 10
   laserPrefab: {fileID: 6845820886829962474, guid: a8fc1107f8e33564c806a19d2974f93b, type: 3}
+--- !u!114 &4968933062552414975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2433392267286338049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04b8cabd1929b8f409557a3fc9ba5be9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 1631480719777595613, guid: a8fc1107f8e33564c806a19d2974f93b, type: 3}
+  firePoint: {fileID: 7243872794186301307}
+  spreadAngle: 20
 --- !u!50 &6848997645707709475
 Rigidbody2D:
   serializedVersion: 4
