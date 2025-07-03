@@ -457,7 +457,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -1107,7 +1107,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -1625,7 +1625,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2091840683338908055, guid: 46e6156034082e14bb0550f0b15f5762, type: 3}
       propertyPath: cycleTime
-      value: 30
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 3422520510267655247, guid: 46e6156034082e14bb0550f0b15f5762, type: 3}
       propertyPath: m_LocalPosition.x

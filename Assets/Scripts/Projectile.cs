@@ -4,7 +4,7 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider2D))]
 public class Projectile : MonoBehaviour
 {
-    public Vector3 direction = Vector3.up;
+    public Vector2 direction = Vector2.up;
     public float speed = 20f;
     public float maxDistancePerFrame = 1f;
     public PlayerShooting shooter;
@@ -23,27 +23,27 @@ public class Projectile : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        if (other.CompareTag("Invader"))
+        if (collision.collider.CompareTag("Invader"))
         {
             if (shooter != null)
                 shooter.NotifyLaserDestroyed(gameObject);
 
-            Destroy(other.gameObject);
-            Destroy(gameObject);
+            Destroy(collision.gameObject);  // Destroy enemy
+            Destroy(gameObject);            // Destroy laser
         }
-    }
-
-    void CheckCollision(Collider2D other)
-    {
-        Bunker bunker = other.gameObject.GetComponent<Bunker>();
-        if (bunker == null || bunker.CheckCollision(GetComponent<BoxCollider2D>(), transform.position))
+        else
         {
-            if (shooter != null)
-                shooter.NotifyLaserDestroyed(gameObject);
+            // Optionally handle other collisions like Bunker here
+            Bunker bunker = collision.collider.GetComponent<Bunker>();
+            if (bunker == null || bunker.CheckCollision(GetComponent<BoxCollider2D>(), transform.position))
+            {
+                if (shooter != null)
+                    shooter.NotifyLaserDestroyed(gameObject);
 
-            Destroy(gameObject);
+                Destroy(gameObject);
+            }
         }
     }
 
