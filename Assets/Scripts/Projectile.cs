@@ -6,15 +6,25 @@ public class Projectile : MonoBehaviour
 {
     public Vector2 direction = Vector2.up;
     public float speed = 20f;
-    public float maxDistancePerFrame = 1f;
     public PlayerShooting shooter;
+
+    private Rigidbody2D rb;
+
+    void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
+
+        rb.isKinematic = true;
+    }
 
     void Update()
     {
-        transform.position += speed * Time.deltaTime * direction;
+        float moveDistance = speed * Time.deltaTime;
+
+        transform.position += (Vector3)(direction * moveDistance);
 
         Vector3 viewPos = Camera.main.WorldToViewportPoint(transform.position);
-        if (viewPos.y > 1 || viewPos.y < 0 || viewPos.x < 0 || viewPos.x > 1)
+        if (viewPos.x < 0 || viewPos.x > 1 || viewPos.y < 0 || viewPos.y > 1)
         {
             if (shooter != null)
                 shooter.NotifyLaserDestroyed(gameObject);
