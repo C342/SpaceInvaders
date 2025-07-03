@@ -4,37 +4,51 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider2D))]
 public class Projectile : MonoBehaviour
 {
-    private BoxCollider2D boxCollider;
     public Vector3 direction = Vector3.up;
     public float speed = 20f;
+    public PlayerShooting shooter;
 
-    private void Awake()
-    {
-        boxCollider = GetComponent<BoxCollider2D>();
-    }
-
-    private void Update()
+    void Update()
     {
         transform.position += speed * Time.deltaTime * direction;
+
+        Vector3 viewPos = Camera.main.WorldToViewportPoint(transform.position);
+        if (viewPos.y > 1 || viewPos.y < 0 || viewPos.x < 0 || viewPos.x > 1)
+        {
+            if (shooter != null)
+                shooter.NotifyLaserDestroyed(gameObject);
+
+            Destroy(gameObject);
+        }
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Invader"))
         {
+            if (shooter != null)
+                shooter.NotifyLaserDestroyed(gameObject);
+
             Destroy(other.gameObject);
             Destroy(gameObject);
         }
     }
 
-    private void CheckCollision(Collider2D other)
+    void CheckCollision(Collider2D other)
     {
         Bunker bunker = other.gameObject.GetComponent<Bunker>();
-
-        if (bunker == null || bunker.CheckCollision(boxCollider, transform.position))
+        if (bunker == null || bunker.CheckCollision(GetComponent<BoxCollider2D>(), transform.position))
         {
+            if (shooter != null)
+                shooter.NotifyLaserDestroyed(gameObject);
+
             Destroy(gameObject);
         }
     }
 
+    void OnDestroy()
+    {
+        if (shooter != null)
+            shooter.NotifyLaserDestroyed(gameObject);
+    }
 }

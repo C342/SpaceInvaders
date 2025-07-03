@@ -655,8 +655,35 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2433392267286338049, guid: 9b2958761d502af48ac7e0051155428f, type: 3}
+      insertIndex: 4
+      addedObject: {fileID: 1056676699}
   m_SourcePrefab: {fileID: 100100000, guid: 9b2958761d502af48ac7e0051155428f, type: 3}
+--- !u!1 &1056676693 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2433392267286338049, guid: 9b2958761d502af48ac7e0051155428f, type: 3}
+  m_PrefabInstance: {fileID: 1005255811}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1056676698 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7243872794186301307, guid: 9b2958761d502af48ac7e0051155428f, type: 3}
+  m_PrefabInstance: {fileID: 1005255811}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1056676699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1056676693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04b8cabd1929b8f409557a3fc9ba5be9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 1631480719777595613, guid: a8fc1107f8e33564c806a19d2974f93b, type: 3}
+  firePoint: {fileID: 1056676698}
 --- !u!1 &1602340750
 GameObject:
   m_ObjectHideFlags: 0
@@ -1178,7 +1205,7 @@ MonoBehaviour:
   rows: 1
   columns: 5
   missilePrefab: {fileID: 6845820886829962474, guid: 1222b4314217a7545932720bc5555e4e, type: 3}
-  missileSpawnRate: 1.5
+  missileSpawnRate: 2
 --- !u!4 &2137735189
 Transform:
   m_ObjectHideFlags: 0

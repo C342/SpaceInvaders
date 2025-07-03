@@ -9,8 +9,8 @@ public class Invaders : MonoBehaviour
     private Vector3 initialPosition;
 
     [Header("Grid")]
-    public int rows = 5;
-    public int columns = 11;
+    public int rows = 1;
+    public int columns = 5;
 
     [Header("Missiles")]
     public Projectile missilePrefab;

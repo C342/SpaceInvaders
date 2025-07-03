@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
         else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
             position.x += speed * Time.deltaTime;
-        } 
+        }
 
         Vector3 leftEdge = Camera.main.ViewportToWorldPoint(Vector3.zero);
         Vector3 rightEdge = Camera.main.ViewportToWorldPoint(Vector3.right);
@@ -41,5 +41,4 @@ public class Player : MonoBehaviour
             GameManager.Instance.OnPlayerKilled(this);
         }
     }
-
 }
