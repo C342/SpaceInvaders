@@ -770,7 +770,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4968933062552414975, guid: 9b2958761d502af48ac7e0051155428f, type: 3}
+    - {fileID: 9186657254144278193, guid: 9b2958761d502af48ac7e0051155428f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1447,7 +1449,7 @@ GameObject:
   - component: {fileID: 2137735188}
   m_Layer: 0
   m_Name: Invaders
-  m_TagString: Untagged
+  m_TagString: Invader
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1496,7 +1498,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   rows: 1
   columns: 5
-  missilePrefab: {fileID: 6845820886829962474, guid: 1222b4314217a7545932720bc5555e4e, type: 3}
+  missilePrefab: {fileID: 0}
   missileSpawnRate: 2
 --- !u!4 &2137735189
 Transform:

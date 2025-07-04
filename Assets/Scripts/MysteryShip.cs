@@ -3,6 +3,9 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider2D))]
 public class MysteryShip : MonoBehaviour
 {
+
+    [SerializeField] private GameObject floatingTextPrefab;
+
     public float speed = 5f;
     public float cycleTime = 30f;
     public int score = 300;
@@ -96,6 +99,12 @@ public class MysteryShip : MonoBehaviour
             Despawn();
             GameManager.Instance.OnMysteryShipKilled(this);
         }
-    }
 
+        if (other.CompareTag("Projectile"))
+        {
+            Instantiate(floatingTextPrefab, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+            Destroy(other.gameObject);
+        }
+    }
 }

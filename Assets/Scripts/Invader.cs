@@ -1,3 +1,4 @@
+using Unity.Burst.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -41,14 +42,6 @@ public class Invader : MonoBehaviour
         if (other.gameObject.layer == LayerMask.NameToLayer("Laser"))
         {
             this.gameObject.SetActive(false);
-        }
-    }
-
-    private void Update()
-    {
-        if (hit.collider.CompareTag("Invader"))
-        {
-
         }
     }
 }

@@ -9,6 +9,7 @@ TagManager:
   - Missile
   - Laser
   - Bunker
+  - Projectile
   layers:
   - Default
   - TransparentFX

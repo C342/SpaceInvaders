@@ -1,64 +1,40 @@
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D))]
-[RequireComponent(typeof(BoxCollider2D))]
 public class Projectile : MonoBehaviour
 {
-    public Vector2 direction = Vector2.up;
-    public float speed = 20f;
-    public PlayerShooting shooter;
+    [SerializeField] private float speed = 10f;
+    [SerializeField] private float lifetime = 5f;
+    [SerializeField] private float raycastDistance = 0.2f;
+    [SerializeField] private LayerMask invaderLayer;
 
-    private Rigidbody2D rb;
+    public delegate void LaserDestroyedHandler(Projectile projectile);
+    public event LaserDestroyedHandler OnLaserDestroyed;
 
-    void Awake()
+    private void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-
-        rb.isKinematic = true;
+        Destroy(gameObject, lifetime);
     }
 
-    void Update()
+    private void Update()
     {
+        Vector2 direction = Vector2.up;
         float moveDistance = speed * Time.deltaTime;
 
-        transform.position += (Vector3)(direction * moveDistance);
-
-        Vector3 viewPos = Camera.main.WorldToViewportPoint(transform.position);
-        if (viewPos.x < 0 || viewPos.x > 1 || viewPos.y < 0 || viewPos.y > 1)
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, raycastDistance, invaderLayer);
+        if (hit.collider != null && hit.collider.CompareTag("Invader"))
         {
-            if (shooter != null)
-                shooter.NotifyLaserDestroyed(gameObject);
-
-            Destroy(gameObject);
+            Destroy(hit.collider.gameObject); // kill invader
+            Destroy(gameObject); // destroy laser
+            OnLaserDestroyed?.Invoke(this);
+            return;
         }
+
+        transform.Translate(direction * moveDistance);
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    private void OnBecameInvisible()
     {
-        if (collision.collider.CompareTag("Invader"))
-        {
-            if (shooter != null)
-                shooter.NotifyLaserDestroyed(gameObject);
-
-            Destroy(collision.gameObject);  // Destroy enemy
-            Destroy(gameObject);            // Destroy laser
-        }
-        else
-        {
-            Bunker bunker = collision.collider.GetComponent<Bunker>();
-            if (bunker == null || bunker.CheckCollision(GetComponent<BoxCollider2D>(), transform.position))
-            {
-                if (shooter != null)
-                    shooter.NotifyLaserDestroyed(gameObject);
-
-                Destroy(gameObject);
-            }
-        }
-    }
-
-    void OnDestroy()
-    {
-        if (shooter != null)
-            shooter.NotifyLaserDestroyed(gameObject);
+        OnLaserDestroyed?.Invoke(this);
+        Destroy(gameObject);
     }
 }
