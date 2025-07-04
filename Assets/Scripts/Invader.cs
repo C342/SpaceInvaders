@@ -46,7 +46,7 @@ public class Invader : MonoBehaviour
 
     private void Update()
     {
-        if (hit.collider.compareTag("Invader"))
+        if (hit.collider.CompareTag("Invader"))
         {
 
         }
