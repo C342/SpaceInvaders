@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7441319871685039717}
   - component: {fileID: 4635970128443724328}
   - component: {fileID: 6008307786522612455}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Invader_Base
   m_TagString: Invader
   m_Icon: {fileID: 0}
@@ -116,7 +116,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -157,14 +157,14 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6784957006680377641}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 0
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
