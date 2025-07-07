@@ -1,40 +1,41 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(BoxCollider2D))]
 public class Projectile : MonoBehaviour
 {
-    [SerializeField] private float speed = 10f;
-    [SerializeField] private float lifetime = 5f;
-    [SerializeField] private float raycastDistance = 0.2f;
-    [SerializeField] private LayerMask invaderLayer;
+    private BoxCollider2D boxCollider;
+    public Vector3 direction = Vector3.up;
+    public float speed = 20f;
 
-    public delegate void LaserDestroyedHandler(Projectile projectile);
-    public event LaserDestroyedHandler OnLaserDestroyed;
-
-    private void Start()
+    private void Awake()
     {
-        Destroy(gameObject, lifetime);
+        boxCollider = GetComponent<BoxCollider2D>();
     }
 
     private void Update()
     {
-        Vector2 direction = Vector2.up;
-        float moveDistance = speed * Time.deltaTime;
-
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, raycastDistance, invaderLayer);
-        if (hit.collider != null && hit.collider.CompareTag("Invader"))
-        {
-            Destroy(hit.collider.gameObject); // kill invader
-            Destroy(gameObject); // destroy laser
-            OnLaserDestroyed?.Invoke(this);
-            return;
-        }
-
-        transform.Translate(direction * moveDistance);
+        transform.position += speed * Time.deltaTime * direction;
     }
 
-    private void OnBecameInvisible()
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        OnLaserDestroyed?.Invoke(this);
-        Destroy(gameObject);
+        CheckCollision(other);
     }
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        CheckCollision(other);
+    }
+
+    private void CheckCollision(Collider2D other)
+    {
+        Bunker bunker = other.gameObject.GetComponent<Bunker>();
+
+        if (bunker == null || bunker.CheckCollision(boxCollider, transform.position))
+        {
+            Destroy(gameObject);
+        }
+    }
+
 }

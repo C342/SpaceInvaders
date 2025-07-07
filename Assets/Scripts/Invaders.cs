@@ -7,11 +7,10 @@ public class Invaders : MonoBehaviour
     public AnimationCurve speed = new AnimationCurve();
     private Vector3 direction = Vector3.right;
     private Vector3 initialPosition;
-    public static System.Action killed;
 
     [Header("Grid")]
-    public int rows = 1;
-    public int columns = 5;
+    public int rows = 5;
+    public int columns = 11;
 
     [Header("Missiles")]
     public Projectile missilePrefab;
@@ -43,11 +42,6 @@ public class Invaders : MonoBehaviour
                 invader.transform.localPosition = position;
             }
         }
-    }
-
-    private void InvaderKilled()
-    {
-
     }
 
     private void Start()
@@ -89,6 +83,7 @@ public class Invaders : MonoBehaviour
         float speed = this.speed.Evaluate(percentKilled);
         transform.position += speed * Time.deltaTime * direction;
 
+
         Vector3 leftEdge = Camera.main.ViewportToWorldPoint(Vector3.zero);
         Vector3 rightEdge = Camera.main.ViewportToWorldPoint(Vector3.right);
 
@@ -99,12 +94,12 @@ public class Invaders : MonoBehaviour
                 continue;
             }
 
-            if (direction == Vector3.right && invader.position.x >= (rightEdge.x - 0.5f))
+            if (direction == Vector3.right && invader.position.x >= (rightEdge.x - 1f))
             {
                 AdvanceRow();
                 break;
             }
-            else if (direction == Vector3.left && invader.position.x <= (leftEdge.x + 0.5f))
+            else if (direction == Vector3.left && invader.position.x <= (leftEdge.x + 1f))
             {
                 AdvanceRow();
                 break;

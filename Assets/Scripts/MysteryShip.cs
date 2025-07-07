@@ -3,9 +3,6 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider2D))]
 public class MysteryShip : MonoBehaviour
 {
-
-    [SerializeField] private GameObject floatingTextPrefab;
-
     public float speed = 5f;
     public float cycleTime = 30f;
     public int score = 300;
@@ -17,9 +14,12 @@ public class MysteryShip : MonoBehaviour
 
     private void Start()
     {
+        // Transform the viewport to world coordinates so we can set the mystery
+        // ship's destination points
         Vector3 leftEdge = Camera.main.ViewportToWorldPoint(Vector3.zero);
         Vector3 rightEdge = Camera.main.ViewportToWorldPoint(Vector3.right);
 
+        // Offset each destination by 1 unit so the ship is fully out of sight
         leftDestination = new Vector2(leftEdge.x - 1f, transform.position.y);
         rightDestination = new Vector2(rightEdge.x + 1f, transform.position.y);
 
@@ -99,12 +99,6 @@ public class MysteryShip : MonoBehaviour
             Despawn();
             GameManager.Instance.OnMysteryShipKilled(this);
         }
-
-        if (other.CompareTag("Projectile"))
-        {
-            Instantiate(floatingTextPrefab, transform.position, Quaternion.identity);
-            Destroy(gameObject);
-            Destroy(other.gameObject);
-        }
     }
+
 }

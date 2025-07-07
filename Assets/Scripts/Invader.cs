@@ -1,5 +1,3 @@
-using Unity.Burst.CompilerServices;
-using Unity.VisualScripting;
 using UnityEngine;
 
 [RequireComponent(typeof(SpriteRenderer))]
@@ -29,6 +27,7 @@ public class Invader : MonoBehaviour
     {
         animationFrame++;
 
+        // Loop back to the start if the animation frame exceeds the length
         if (animationFrame >= animationSprites.Length)
         {
             animationFrame = 0;
@@ -43,11 +42,10 @@ public class Invader : MonoBehaviour
         {
             GameManager.Instance.OnInvaderKilled(this);
         }
-
-        if (other.CompareTag("Projectile"))
+        else if (other.gameObject.layer == LayerMask.NameToLayer("Boundary"))
         {
-            Destroy(gameObject);
-            Destroy(other.gameObject);
+            GameManager.Instance.OnBoundaryReached();
         }
     }
+
 }

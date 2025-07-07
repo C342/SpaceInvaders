@@ -144,10 +144,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1fab0a09457c5247b088cca89e1c769, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  floatingTextPrefab: {fileID: 838535721134216770, guid: bca74001cf23dba44b4f2970bef1638f, type: 3}
   speed: 5
-  cycleTime: 25
-  score: 300
+  cycleTime: 22.5
+  score: 250
 --- !u!50 &3808091489267442817
 Rigidbody2D:
   serializedVersion: 4
