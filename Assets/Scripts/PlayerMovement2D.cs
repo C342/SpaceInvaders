@@ -17,23 +17,23 @@ public class PlayerMovement2D : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    private void OnEnable()
-    {
+    //private void OnEnable()
+    //{
         
-        inputActions = new PlayerInputActions();
+    //    inputActions = new PlayerInputActions();
 
-        inputActions.Player.Move.performed += ctx => moveInput = ctx.ReadValue<Vector2>();
-        inputActions.Player.Move.cancelled += ctx => moveInput = ctx.zero;
+    //    inputActions.Player.Move.performed += ctx => moveInput = ctx.ReadValue<Vector2>();
+    //    inputActions.Player.Move.cancelled += ctx => moveInput = ctx.zero;
 
-    }
+    //}
 
-    private void OnDisable()
-    {
-        inputActions.Player.Disable();
-    }
+    //private void OnDisable()
+    //{
+    //    inputActions.Player.Disable();
+    //}
 
-    private void FixedUpdate()
-    {
-        rb.velocity = moveInput * moveSpeed;
-    }
+    //private void FixedUpdate()
+    //{
+    //    rb.velocity = moveInput * moveSpeed;
+    //}
 }
