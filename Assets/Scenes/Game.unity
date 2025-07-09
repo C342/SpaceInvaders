@@ -755,14 +755,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 4082714790091872289, guid: 9b2958761d502af48ac7e0051155428f, type: 3}
-      propertyPath: laserPrefab
-      value: 
-      objectReference: {fileID: 6152698517987586352, guid: a8fc1107f8e33564c806a19d2974f93b, type: 3}
-    - target: {fileID: 5096774039469062694, guid: 9b2958761d502af48ac7e0051155428f, type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7243872794186301307, guid: 9b2958761d502af48ac7e0051155428f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -803,10 +795,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8839759817900118377, guid: 9b2958761d502af48ac7e0051155428f, type: 3}
-      propertyPath: laserPrefab
-      value: 
-      objectReference: {fileID: 2374861851214951171, guid: a8fc1107f8e33564c806a19d2974f93b, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

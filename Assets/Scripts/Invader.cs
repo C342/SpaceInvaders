@@ -27,7 +27,6 @@ public class Invader : MonoBehaviour
     {
         animationFrame++;
 
-        // Loop back to the start if the animation frame exceeds the length
         if (animationFrame >= animationSprites.Length)
         {
             animationFrame = 0;
