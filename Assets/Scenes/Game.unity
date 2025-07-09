@@ -666,6 +666,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 46e6156034082e14bb0550f0b15f5762, type: 3}
+--- !u!4 &944315692 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5715705045428543548, guid: 9b2958761d502af48ac7e0051155428f, type: 3}
+  m_PrefabInstance: {fileID: 1005255811}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &974085350
 GameObject:
   m_ObjectHideFlags: 0
@@ -795,10 +800,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2699405023276604113, guid: 9b2958761d502af48ac7e0051155428f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2433392267286338049, guid: 9b2958761d502af48ac7e0051155428f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1682944807}
+    - targetCorrespondingSourceObject: {fileID: 2433392267286338049, guid: 9b2958761d502af48ac7e0051155428f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1682944813}
   m_SourcePrefab: {fileID: 100100000, guid: 9b2958761d502af48ac7e0051155428f, type: 3}
 --- !u!1001 &1007235097
 PrefabInstance:
@@ -1288,6 +1300,38 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1937823774}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1682944806 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2433392267286338049, guid: 9b2958761d502af48ac7e0051155428f, type: 3}
+  m_PrefabInstance: {fileID: 1005255811}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1682944807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1682944806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 012adda9b224d0d4887ddcfbbaf01710, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  laserPrefab: {fileID: 6152698517987586352, guid: a8fc1107f8e33564c806a19d2974f93b, type: 3}
+  firePoint: {fileID: 944315692}
+--- !u!114 &1682944813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1682944806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dc20123314b86544bc52567af7e26ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
 --- !u!1 &1902009827
 GameObject:
   m_ObjectHideFlags: 0

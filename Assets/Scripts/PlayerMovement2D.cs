@@ -22,8 +22,8 @@ public class PlayerMovement2D : MonoBehaviour
 
         inputActions = new PlayerInputActions();
 
-        inputActions.Player.Move.performed += ctx => moveInput = ctx.ReadValue<Vector2>();
-        inputActions.Player.Move.cancelled += ctx => moveInput = ctx.zero;
+        inputActions.Player.Movement.performed += ctx => moveInput = ctx.ReadValue<Vector2>();
+        inputActions.Player.Movement.canceled += ctx => moveInput = Vector2.zero;
 
     }
 
