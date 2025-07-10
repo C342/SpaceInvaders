@@ -10,7 +10,9 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
+        float moveInput = Input.GetAxisRaw("Horizontal");
         Vector3 position = transform.position;
+        position.x += moveInput * speed * Time.deltaTime;
 
         Vector3 leftEdge = Camera.main.ViewportToWorldPoint(Vector3.zero);
         Vector3 rightEdge = Camera.main.ViewportToWorldPoint(Vector3.right);
@@ -18,7 +20,7 @@ public class Player : MonoBehaviour
 
         transform.position = position;
 
-        if (laser == null && (Input.GetKey(KeyCode.Space) || Input.GetMouseButtonDown(0)))
+        if (laser == null && (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Space)))
         {
             laser = Instantiate(laserPrefab, transform.position, Quaternion.identity);
         }
